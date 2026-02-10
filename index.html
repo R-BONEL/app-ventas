@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas App</title>
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+</head>
+<body class="bg-gray-100">
+
+    <div id="view-login" class="flex flex-col items-center justify-center h-screen">
+        <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm">
+            <h2 class="text-3xl font-bold mb-6 text-center text-blue-600">APP VENTAS</h2>
+            <input type="text" id="user" placeholder="Usuario" class="w-full p-3 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-400">
+            <input type="password" id="pass" placeholder="Contraseña" class="w-full p-3 mb-6 border rounded-lg focus:ring-2 focus:ring-blue-400">
+            <button onclick="intentarLogin()" class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition">ENTRAR</button>
+            <p id="error-msg" class="text-red-500 text-center mt-4 hidden">Usuario o clave incorrectos</p>
+        </div>
+    </div>
+
+    <div id="view-menu" class="hidden p-4">
+        <header class="flex justify-between items-center mb-6">
+            <h1 class="text-xl font-bold">Vendedor: <span id="vendedor-name" class="text-blue-600"></span></h1>
+            <button onclick="cerrarSesion()" class="text-sm bg-red-100 text-red-600 px-3 py-1 rounded">Salir</button>
+        </header>
+        
+        <div class="grid grid-cols-2 gap-4">
+            <button onclick="alert('Ir a Factura')" class="h-32 bg-green-500 text-white rounded-2xl shadow-lg font-bold flex flex-col items-center justify-center">
+                <span>➕ Nueva</span><span>Factura</span>
+            </button>
+            <button onclick="alert('Ir a Historial')" class="h-32 bg-blue-500 text-white rounded-2xl shadow-lg font-bold flex flex-col items-center justify-center">
+                <span>📅 Ventas</span><span>del Día</span>
+            </button>
+            <button onclick="alert('Ir a Inventario')" class="h-32 bg-orange-500 text-white rounded-2xl shadow-lg font-bold flex flex-col items-center justify-center">
+                <span>📦 Ver</span><span>Inventario</span>
+            </button>
+            <button onclick="alert('Ir a Productos')" class="h-32 bg-purple-500 text-white rounded-2xl shadow-lg font-bold flex flex-col items-center justify-center">
+                <span>🏷️ Lista</span><span>Productos</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
