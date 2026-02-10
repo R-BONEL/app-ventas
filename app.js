@@ -38,3 +38,7 @@ async function intentarLogin() {
 function cerrarSesion() {
     location.reload(); // Reinicia la app
 }
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
