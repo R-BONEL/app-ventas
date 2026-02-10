@@ -42,6 +42,30 @@
         </div>
     </div>
 
+    <div id="view-factura" class="hidden p-4">
+    <div class="flex items-center mb-4">
+        <button onclick="irAMenu()" class="text-blue-600 font-bold mr-4">← Volver</button>
+        <h2 class="text-xl font-bold">Nueva Factura</h2>
+    </div>
+
+    <div class="mb-4">
+        <input type="text" id="buscar-producto" oninput="buscarProductos()" placeholder="Buscar producto..." class="w-full p-2 border rounded">
+        <div id="lista-busqueda" class="bg-white shadow-md rounded mt-1 max-h-40 overflow-y-auto"></div>
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow mb-4">
+        <h3 class="font-bold border-b pb-2 mb-2">Productos en Carrito</h3>
+        <ul id="carrito-lista" class="divide-y"></ul>
+        <div class="text-right font-bold text-lg mt-4">
+            Total: $<span id="total-factura">0.00</span>
+        </div>
+    </div>
+
+    <button onclick="finalizarVenta()" class="w-full bg-green-600 text-white p-4 rounded-xl font-bold text-lg shadow-lg">
+        🖨️ IMPRIMIR Y GUARDAR
+    </button>
+</div>
+
     <script src="app.js"></script>
 </body>
 </html>
